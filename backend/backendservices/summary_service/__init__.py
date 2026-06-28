@@ -1,0 +1,1 @@
+from backendservices.summary_service.router import router

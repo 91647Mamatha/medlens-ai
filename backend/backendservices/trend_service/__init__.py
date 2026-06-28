@@ -1,0 +1,1 @@
+from backendservices.trend_service.router import router

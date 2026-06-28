@@ -1,0 +1,1 @@
+from backendservices.medicine_service.router import router

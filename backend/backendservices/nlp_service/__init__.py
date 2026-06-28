@@ -1,0 +1,1 @@
+from backendservices.nlp_service.router import router

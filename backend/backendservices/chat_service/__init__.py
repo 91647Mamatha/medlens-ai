@@ -1,0 +1,1 @@
+from backendservices.chat_service.router import router

@@ -1,0 +1,1 @@
+from backendservices.notification_service.router import router

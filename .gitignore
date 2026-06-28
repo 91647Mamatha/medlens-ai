@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+*.env
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Uploads
+uploads/
+
+# Python virtual env
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# SQLite Browser
+*.sqbpro
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
