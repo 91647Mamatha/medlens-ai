@@ -5,7 +5,15 @@ import GlowCard from '../components/GlowCard'
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 
-function UploadPage({ api, refreshReports, refreshUploads, refreshNotifications, showToast }) {
+function UploadPage({
+  user,
+  api,
+  refreshReports,
+  refreshUploads,
+  refreshNotifications,
+  showToast
+})
+{
   const [file, setFile] = useState(null)
   const [result, setResult] = useState(null)
   const [busy, setBusy] = useState(false)
@@ -150,10 +158,45 @@ function UploadPage({ api, refreshReports, refreshUploads, refreshNotifications,
             </div>
 
             <div className="grid gap-4">
-              <DetailBlock title="Patient Summary" text={result.analysis.patient_summary} tone="success" />
-              <DetailBlock title="Health Tips" text={result.analysis.health_tips} />
-              <DetailBlock title="Recommendations" text={result.analysis.recommendations} />
-              <DetailBlock title="Abnormal Values" text={result.analysis.abnormal_values} tone="danger" />
+              {user?.role === "doctor" ? (
+                <>
+                  <DetailBlock
+                    title="Doctor Summary"
+                    text={result.analysis.doctor_summary}
+                    tone="success"
+                  />
+
+                  <DetailBlock
+                    title="Abnormal Values"
+                    text={result.analysis.abnormal_values}
+                    tone="danger"
+                  />
+                </>
+              ) : (
+                <>
+                  <DetailBlock
+                    title="Patient Summary"
+                    text={result.analysis.patient_summary}
+                    tone="success"
+                  />
+
+                  <DetailBlock
+                    title="Health Tips"
+                    text={result.analysis.health_tips}
+                  />
+
+                  <DetailBlock
+                    title="Recommendations"
+                    text={result.analysis.recommendations}
+                  />
+
+                  <DetailBlock
+                    title="Abnormal Values"
+                    text={result.analysis.abnormal_values}
+                    tone="danger"
+                  />
+                </>
+              )}
             </div>
           </div>
         )}

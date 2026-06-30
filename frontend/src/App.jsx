@@ -124,6 +124,7 @@ const api = useMemo(() => {
 
         {page === 'upload' && (
           <UploadPage
+            user={user}
             api={api}
             refreshReports={refreshReports}
             refreshUploads={refreshUploads}
